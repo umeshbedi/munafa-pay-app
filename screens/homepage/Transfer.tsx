@@ -4,14 +4,16 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import { NavigationProp, useNavigation, useTheme } from '@react-navigation/native'
 import { ScreenList } from '../../utils/screens'
 
-export default function Transfer() {
+export default function Transfer({balance=0, uid="", paymentHistory={}}) {
     const { colors } = useTheme()
     const { navigate } = useNavigation<NavigationProp<ScreenList>>()
+    
+    
     const tsIcons = [
-        { name: `Bank${'\n'}Transfer`, icon: 'bank-outline', func: () => navigate("SendTo") },
-        { name: `Scan${'\n'}QR Code`, icon: 'qrcode-scan', func: () => void (0) },
-        { name: `UPI${'\n'}Transfer`, icon: 'at', func: () => void (0) },
-        { name: `View${'\n'}Expenses`, icon: 'file-document-outline', func: () => void (0) },
+        { name: `Bank${'\n'}Transfer`, icon: 'bank-outline', func: () => navigate("SendToBank", {balance:balance, uid:uid}) },
+        { name: `Scan${'\n'}QR Code`, icon: 'qrcode-scan', func: () => navigate("QRScannerScreen", {balance:balance, uid:uid}) },
+        { name: `UPI${'\n'}Transfer`, icon: 'at', func: () => navigate("SendToUpi", {balance:balance, uid:uid, upi:""}) },
+        { name: `View${'\n'}Expenses`, icon: 'file-document-outline', func: () => navigate("Expenses", {data:paymentHistory}) },
     ]
 
     return (

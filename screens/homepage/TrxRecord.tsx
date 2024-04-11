@@ -30,8 +30,9 @@ function MyTabs() {
 export default function TrxRecord() {
 
    return (
-    <View className='mt-12 justify-between h-[500px] '>
-      <MyTabs/>
+    <View className='mt-12 justify-between h-[500px] flex-1'>
+      {/* <MyTabs/> */}
+      <RecentTx/>
     </View>
   )
 }

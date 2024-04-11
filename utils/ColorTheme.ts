@@ -29,3 +29,8 @@ export const colorTheme = {
     dark: MyDarkTheme,
     light: MyLightTheme
 }
+
+export const customColors = {
+  lightGreen : "#779677",
+  lightOrange:"#d0b244"
+}

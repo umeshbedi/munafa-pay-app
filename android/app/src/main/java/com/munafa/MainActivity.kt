@@ -1,4 +1,4 @@
-package com.munafa
+package com.umesh.munafa
 
 import com.facebook.react.ReactActivity
 import com.facebook.react.ReactActivityDelegate

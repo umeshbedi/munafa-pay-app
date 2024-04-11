@@ -1,4 +1,4 @@
-package com.munafa
+package com.umesh.munafa
 
 import android.app.Application
 import com.facebook.react.PackageList

@@ -4,7 +4,7 @@ import { NavigationProp, useNavigation, useTheme } from '@react-navigation/nativ
 import Feather from 'react-native-vector-icons/Feather'
 import { ScreenList } from '../../utils/screens'
 
-export default function Header({ back = false, name = "" }) {
+export default function Header({ back = false, name = "", iconPress=()=>void(0) }) {
     const { colors } = useTheme()
     const {goBack} = useNavigation<NavigationProp<ScreenList>>()
     return (
@@ -14,7 +14,7 @@ export default function Header({ back = false, name = "" }) {
                 ?
                 (<Feather name='chevron-left' size={25} style={{ color: colors.text }} onPress={goBack}/>)
                 :
-                (<Feather name='menu' size={25} style={{ color: colors.text }} />)
+                (<Feather name='menu' size={25} style={{ color: colors.text }} onPress={iconPress}/>)
                 }
             </View>
 
